@@ -15,24 +15,27 @@ new Chart(ctx, {
                 label: 'Project Connect',
                 data: [47.6, 44.4, 40.1, 30.4],
                 borderColor: '#16a34a',
-                backgroundColor: '#16a34a',
                 fill: false,
+                tension: 0,
+                stepped: false,
                 pointRadius: 4
             },
             {
                 label: 'Tysons Central',
                 data: [24.3, 6.5, 6.7, -2.5],
                 borderColor: '#f59e0b',
-                backgroundColor: '#f59e0b',
                 fill: false,
+                tension: 0,
+                stepped: false,
                 pointRadius: 4
             },
             {
                 label: 'Poplar Point',
                 data: [5.5, -12.9, -12.4, -21.6],
                 borderColor: '#dc2626',
-                backgroundColor: '#dc2626',
                 fill: false,
+                tension: 0,
+                stepped: false,
                 pointRadius: 4
             }
         ]
@@ -41,18 +44,16 @@ new Chart(ctx, {
     options: {
         responsive: true,
 
+        elements: {
+            line: {
+                tension: 0
+            }
+        },
+
         plugins: {
             legend: {
                 display: true,
                 position: 'bottom'
-            },
-
-            tooltip: {
-                callbacks: {
-                    label: function(context) {
-                        return context.dataset.label + ': $' + context.parsed.y.toFixed(1) + 'M';
-                    }
-                }
             }
         },
 
